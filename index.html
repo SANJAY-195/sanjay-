@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h2>Smart Expense Tracker</h2>
+    <button id="newGroupBtn">+ New Group</button>
+  </header>
+
+  <!-- PAGE 1: WELCOME -->
+  <section id="welcomePage" class="page active">
+    <h1>Welcome</h1>
+    <p>Create a group to start tracking expenses with your friends.</p>
+    <button onclick="showCreateGroup()">Create Your First Group</button>
+  </section>
+
+  <!-- PAGE 2: CREATE GROUP -->
+  <section id="createGroupPage" class="page">
+    <h2>Start a Tracker</h2>
+
+    <input type="text" id="groupName" placeholder="e.g. Ski Trip 2024">
+    
+    <select id="currency">
+      <option value="USD ($)">USD ($) - US Dollar</option>
+      <option value="INR (₹)">INR (₹) - Indian Rupee</option>
+    </select>
+
+    <div class="buttons">
+      <button onclick="createGroup()">Create</button>
+      <button class="cancel" onclick="goHome()">Cancel</button>
+    </div>
+  </section>
+
+  <!-- PAGE 3: GROUP DASHBOARD -->
+  <section id="groupPage" class="page">
+    <h2 id="groupTitle"></h2>
+
+    <div class="cards">
+      <div class="card dark">
+        <p>Total Pool</p>
+        <h3 id="totalPool">$0</h3>
+      </div>
+
+      <div class="card light">
+        <p>Share per Member</p>
+        <h3 id="sharePerMember">$0</h3>
+      </div>
+    </div>
+
+    <h3>Members</h3>
+    <div class="member-input">
+      <input type="text" id="memberName" placeholder="New member...">
+      <button onclick="addMember()">+</button>
+    </div>
+
+    <p id="memberList">No members added yet.</p>
+
+    <button class="expense">+ Add New Expense</button>
+    <button class="save">Save & Finish</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
